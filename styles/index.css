@@ -1,0 +1,121 @@
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html,
+body {
+    height: 100%;
+    background-color: #fce2d2;
+}
+.page {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.processing-container {
+    position: relative;
+    height: 100%;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*overflow: hidden;*/
+}
+
+.processing-item {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 80%;
+    animation-name: data;
+    /*animation-fill-mode: forwards;*/
+    animation-direction: normal;
+    animation-duration: 1.5s;
+    animation-timing-function: ease;
+}
+img {
+    height: 150px;
+    width: 150px;
+    object-fit: cover;  
+}
+
+
+.processing-item:nth-child(1){
+    animation-iteration-count: 1;
+    visibility: hidden;
+}
+.processing-item:nth-child(2){
+    animation-delay: 1.5s;  
+    animation-iteration-count: 3;
+    visibility: hidden;
+}
+.processing-item:nth-child(3){
+    animation-name: done;
+    animation-delay: 6s;  
+    animation-iteration-count: 1;
+    visibility: hidden;
+    animation-fill-mode: forwards;
+}
+
+@keyframes data {
+    0% { transform: translateX(150%)scale(0.8); visibility: hidden;}
+    25% {transform: translateX(0%) scale(0.8); opacity: 
+        1;}
+    50% { transform: translateX(0%) scale(1.2); visibility: visible; }
+    75% {transform: translateX(0%) scale(0.8); opacity: 
+        1;}
+    100% { transform: translateX(-150%); opacity: 0; }
+
+}
+@keyframes done { 
+    0% { transform: translateY(-150%); visibility: hidden;}
+    50% { transform: translateY(0%); visibility: visible; }
+    100% { transform: translateY(0%); visibility: visible; }
+
+}
+.processing-label {
+    position: absolute;
+    bottom: 325px;
+    visibility: hidden;
+    
+    
+}
+.processing {
+    
+    animation-name: label;
+    animation-duration: 1.5s;  
+    animation-iteration-count: 4;
+} 
+@keyframes label {
+    0% { visibility: hidden;}
+    30% { visibility: hidden;}
+    50% { visibility: visible;}
+    70% { visibility: hidden;}
+    100% { visibility: hidden;}
+
+}
+.labeldone {
+    visibility: hidden;
+    animation-name: labeldone;
+    animation-duration: 1.5s; 
+    animation-delay: 6s; 
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+} 
+@keyframes labeldone {
+    0% { visibility: hidden;}
+    30% { visibility: hidden;}
+    50% { visibility: visible; }
+    100% { visibility: visible;}
+
+}
+
+
+
